@@ -34,7 +34,7 @@ describe('GithubConsumingRepository', () => {
   describe('getRepostories', () => {
     it('should request correctly github api', () => {
       const params = { per_page: 10 };
-      const options = ['q=stars:>1', 'sort=stars', `per_page=${params.per_page}`]
+      const options = ['q=user:google', 'sort=stars', `per_page=${params.per_page}`]
       const headers = new AxiosHeaders({
         'Accept': GITHUB_API_ENUM.API_ACCEPT,
         'X-GitHub-Api-Version': GITHUB_API_ENUM.API_VERSION,

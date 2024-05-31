@@ -4,7 +4,7 @@ import { GithubConsumingService } from '../github-consuming.service';
 
 describe('GithubConsumingController', () => {
   const serviceMock = {
-    findAllRepositories: jest.fn(),
+    findGoogleRepositories: jest.fn(),
   };
 
   let controller: GithubConsumingController;
