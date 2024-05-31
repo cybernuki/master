@@ -13,7 +13,7 @@ export class GithubConsumingService {
   constructor(private readonly githubConsumingRepository: GithubConsumingRepository) {
   }
 
-  async findAllRepositories(params: AllRepositoryParams): Promise<AllRepositoriesResponseDTO> {
+  async findGoogleRepositories(params: AllRepositoryParams): Promise<AllRepositoriesResponseDTO> {
     const response = await firstValueFrom(
       this.githubConsumingRepository.getRepositories(params.per_page).pipe(
         catchError(() => {

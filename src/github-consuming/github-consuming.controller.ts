@@ -9,14 +9,14 @@ import { AllRepositoriesResponseDTO } from './dto/all-repositories-response.dto'
 export class GithubConsumingController {
   constructor(private readonly githubConsumingService: GithubConsumingService) { }
 
-  @Get('repository')
+  @Get('google-repository')
   @ApiOkResponse({
     type: AllRepositoriesResponseDTO,
     isArray: true,
   })
-  findAllRepositories(
+  findGoogleRepositories(
     @Query() params: AllRepositoryParams,
   ) {
-    return this.githubConsumingService.findAllRepositories(params);
+    return this.githubConsumingService.findGoogleRepositories(params);
   }
 }

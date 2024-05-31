@@ -32,8 +32,8 @@ describe('GithubConsumingController', () => {
   describe('findAllRepositories', () => {
     it('should call service correctly', async () => {
       const params = {per_page: 10};
-      await expect(controller.findAllRepositories(params)).resolves;
-      expect(githubService.findAllRepositories).toHaveBeenCalledWith(params);
+      await expect(controller.findGoogleRepositories(params)).resolves;
+      expect(githubService.findGoogleRepositories).toHaveBeenCalledWith(params);
     })
   });
 });

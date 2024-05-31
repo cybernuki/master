@@ -21,7 +21,7 @@ export class GithubConsumingRepository {
     if (!accessToken) {
       throw 'Missing Access Token from enviroment configuration';
     }
-    const options = ['q=stars:>1', 'sort=stars', `per_page=${per_page}`]
+    const options = ['q=user:google', 'sort=stars', `per_page=${per_page}`]
     const headers = new AxiosHeaders({
       'Accept': GITHUB_API_ENUM.API_ACCEPT,
       'X-GitHub-Api-Version': GITHUB_API_ENUM.API_VERSION,

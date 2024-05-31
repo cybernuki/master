@@ -37,7 +37,7 @@ describe('GithubConsumingService', () => {
           data: { items: [] },
         }))
       )
-      await expect(service.findAllRepositories(params)).resolves;
+      await expect(service.findGoogleRepositories(params)).resolves;
       expect(githubRepository.getRepositories).toHaveBeenCalledWith(params.per_page);
     })
 
@@ -46,7 +46,7 @@ describe('GithubConsumingService', () => {
       githubRepository.getRepositories = jest.fn().mockReturnValue(
         new Observable(observer => observer.error('mock error'))
       )
-      await expect(service.findAllRepositories(params)).rejects.toEqual('Error while searching for public repositories');
+      await expect(service.findGoogleRepositories(params)).rejects.toEqual('Error while searching for public repositories');
       expect(githubRepository.getRepositories).toHaveBeenCalledWith(params.per_page);
     })
   });
